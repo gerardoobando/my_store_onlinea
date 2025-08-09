@@ -24,7 +24,7 @@
         <h2 class="m-0">My Store Online</h2>
         <div class="cart-icon">
           <i class="bi bi-cart3 fs-3"></i>
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">200</span>
+          <span id="contadorCarrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">0</span>
         </div>
       </div>
 
@@ -68,75 +68,9 @@
 
       <!-- PRODUCTOS -->
       <section class="col-sm-9">
-        <div class="row row-cols-1 row-cols-md-3 g-3">
-
-          <!-- Repetimos 6 productos -->
-          <!-- Producto -->
-          <div class="col">
-            <div class="card h-100 text-center shadow-sm">
-              <img src="https://i.ebayimg.com/thumbs/images/g/p1EAAeSwADxohBh7/s-l1200.jpg" class="card-img-top img-fluid" alt="Producto 1">
-              <div class="card-body">
-                <h6 class="card-title">camisa Gucci</h6>
-                <button class="btn btn-outline-primary btn-sm">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Puedes copiar y pegar el bloque anterior para los otros productos -->
-          <!-- Producto 2 -->
-          <div class="col">
-            <div class="card h-100 text-center shadow-sm">
-              <img src="data:image/jpeg;base64,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" class="card-img-top img-fluid" alt="Producto 2">
-              <div class="card-body">
-                <h6 class="card-title">camisa Tommy</h6>
-                <button class="btn btn-outline-primary btn-sm">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 3 -->
-          <div class="col">
-            <div class="card h-100 text-center shadow-sm">
-              <img src="data:image/jpeg;base64,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" class="card-img-top img-fluid" alt="Producto 3">
-              <div class="card-body">
-                <h6 class="card-title">camisa lacoste</h6>
-                <button class="btn btn-outline-primary btn-sm">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 4 -->
-          <div class="col">
-            <div class="card h-100 text-center shadow-sm">
-              <img src="data:image/jpeg;base64,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" class="card-img-top img-fluid" alt="Producto 4">
-              <div class="card-body">
-                <h6 class="card-title">camisa Hugo Boss</h6>
-                <button class="btn btn-outline-primary btn-sm">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 5 -->
-          <div class="col">
-            <div class="card h-100 text-center shadow-sm">
-              <img src="data:image/jpeg;base64,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" class="card-img-top img-fluid" alt="Producto 5">
-              <div class="card-body">
-                <h6 class="card-title">camisa Guess</h6>
-                <button class="btn btn-outline-primary btn-sm">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Producto 6 -->
-          <div class="col">
-            <div class="card h-100 text-center shadow-sm">
-              <img src="data:image/jpeg;base64,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" class="card-img-top img-fluid" alt="Producto 6">
-              <div class="card-body">
-                <h6 class="card-title">camisa Calvin Klein</h6>
-                <button class="btn btn-outline-primary btn-sm">Agregar al carrito</button>
-              </div>
-            </div>
-          </div>
+        <div class="row" id="contenedor-productos">
+          <!--Productos se cargaran aqui con JS-->
+          
 
         </div>
       </section>
@@ -150,5 +84,58 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script para renderizar productos desde API -->
+  <script>
+    const url = "https://backcvbgtmdesa.azurewebsites.net/api/productos";
+    const contenedor = document.getElementById("contenedor-productos");
+    const contadorCarrito = document.getElementById("contadorCarrito");
+    let carrito = 0;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(productos => {
+        productos.forEach(producto => {
+          const col = document.createElement("div");
+          col.className = "col-sm-12 col-md-4 mb-4";
+
+          let precioHTML = "";
+          if (producto.EnOferta && producto.PrecioOferta) {
+            precioHTML = `
+              <span class="text-danger fw-bold">$${parseFloat(producto.PrecioOferta).toFixed(2)}</span>
+              <small class="text-muted text-decoration-line-through">$${parseFloat(producto.Precio).toFixed(2)}</small>
+            `;
+          } else {
+            precioHTML = `<span class="fw-bold">$${parseFloat(producto.Precio).toFixed(2)}</span>`;
+          }
+
+          col.innerHTML = `
+            <div class="card h-100 shadow-sm">
+              <img src="${producto.Imagen}" class="card-img-top img-fluid" alt="${producto.Nombre}">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${producto.Nombre}</h5>
+                <p class="card-text">${producto.Descripcion}</p>
+                <p>${precioHTML}</p>
+                <a href="#" class="btn btn-primary mt-auto agregarCarrito">Agregar al carrito</a>
+              </div>
+            </div>
+          `;
+
+          col.querySelector(".agregarCarrito").addEventListener("click", e => {
+            e.preventDefault();
+            carrito++;
+            contadorCarrito.textContent = carrito;
+          });
+
+          contenedor.appendChild(col);
+        });
+      })
+      .catch(error => {
+        console.error("Error al cargar productos:", error);
+        contenedor.innerHTML = `
+          <div class="alert alert-danger">
+            No se pudieron cargar los productos. Intenta más tarde.
+          </div>`;
+      });
+  </script>
 </body>
 </html>
